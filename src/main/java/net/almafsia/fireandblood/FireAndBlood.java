@@ -1,8 +1,12 @@
 package net.almafsia.fireandblood;
 
 import com.mojang.logging.LogUtils;
+import net.almafsia.fireandblood.block.ModBlocks;
+import net.almafsia.fireandblood.item.ModCreativeModeTab;
+import net.almafsia.fireandblood.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -20,9 +24,14 @@ public class FireAndBlood {
     public FireAndBlood() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
+
+        modEventBus.addListener(this::addCreative);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -36,6 +45,18 @@ public class FireAndBlood {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 
+        }
+    }
+
+    private void addCreative(CreativeModeTabEvent.BuildContents event){
+        if(event.getTab() == ModCreativeModeTab.FORGERY_TAB){
+            event.accept(ModItems.VOLCANIUM_INGOT);
+            event.accept(ModItems.DARK_SISTER);
+
+            event.accept(ModBlocks.BLOCK_OF_VOLCANIUM);
+            event.accept(ModBlocks.BLACKSTONE_VOLCANIUM_ORE);
+            event.accept(ModBlocks.DEEPSLATE_VOLCANIUM_ORE);
+            event.accept(ModBlocks.SMELTER);
         }
     }
 }

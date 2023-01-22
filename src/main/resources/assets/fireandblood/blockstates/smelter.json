@@ -1,0 +1,19 @@
+{
+	"variants": {
+		"facing=east": {
+			"model":"fireandblood:block/smelter", "y": 90
+		},
+		
+		"facing=south": {
+			"model": "fireandblood:block/smelter", "y": 180
+		},
+		
+		"facing=west": {
+			"model": "fireandblood:block/smelter", "y": 270
+		},
+		
+		"facing=north": {
+			"model": "fireandblood:block/smelter"
+		}
+	}
+}

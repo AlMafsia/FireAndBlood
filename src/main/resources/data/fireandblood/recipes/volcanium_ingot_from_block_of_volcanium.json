@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "volcanium",
+  "ingredients": [
+    {
+      "item": "fireandblood:block_of_volcanium"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "fireandblood:volcanium_ingot"
+  }
+}
