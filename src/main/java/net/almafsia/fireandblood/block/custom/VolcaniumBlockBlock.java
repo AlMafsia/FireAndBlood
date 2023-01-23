@@ -2,7 +2,6 @@ package net.almafsia.fireandblood.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.item.Item.Properties;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -13,11 +12,11 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 
-public class BlockOfVolcaniumBlock extends Block{
+public class VolcaniumBlockBlock extends Block{
 
     public static final IntegerProperty LIGHT_LEVEL=IntegerProperty.create("light_level", 8, 12);
 
-    public BlockOfVolcaniumBlock(Properties p_49795_) {
+    public VolcaniumBlockBlock(Properties p_49795_) {
         super(p_49795_);
 
         // TODO Auto-generated constructor stub

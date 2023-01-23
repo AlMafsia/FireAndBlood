@@ -6,7 +6,7 @@
             "entries": [
                 {
                     "type": "minecraft:item",
-                    "name": "fireandblood:block_of_volcanium"
+                    "name": "fireandblood:voclanium_block"
                 }
             ]
         }

@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "fireandblood:block/block_of_volcanium",
-		"particle": "fireandblood:block/block_of_volcanium"
+		"0": "fireandblood:block/voclanium_block",
+		"particle": "fireandblood:block/voclanium_block"
 	},
 	"elements": [
 		{

@@ -53,7 +53,7 @@ public class FireAndBlood {
             event.accept(ModItems.VOLCANIUM_INGOT);
             event.accept(ModItems.DARK_SISTER);
 
-            event.accept(ModBlocks.BLOCK_OF_VOLCANIUM);
+            event.accept(ModBlocks.VOLCANIUM_BLOCK);
             event.accept(ModBlocks.BLACKSTONE_VOLCANIUM_ORE);
             event.accept(ModBlocks.DEEPSLATE_VOLCANIUM_ORE);
             event.accept(ModBlocks.SMELTER);
