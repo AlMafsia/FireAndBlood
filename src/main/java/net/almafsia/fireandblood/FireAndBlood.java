@@ -53,6 +53,11 @@ public class FireAndBlood {
             event.accept(ModItems.VOLCANIUM_INGOT);
             event.accept(ModItems.DARK_SISTER);
 
+            event.accept(ModItems.VALYRIAN_HELMET);
+            event.accept(ModItems.VALYRIAN_CHESTPLATE);
+            event.accept(ModItems.VALYRIAN_LEGGINGS);
+            event.accept(ModItems.VALYRIAN_BOOTS);
+
             event.accept(ModBlocks.VOLCANIUM_BLOCK);
             event.accept(ModBlocks.BLACKSTONE_VOLCANIUM_ORE);
             event.accept(ModBlocks.DEEPSLATE_VOLCANIUM_ORE);

@@ -1,6 +1,12 @@
 {
     "item.fireandblood.dark_sister": "Dark Sister",
     "item.fireandblood.volcanium_ingot": "Volcanium Ingot",
+
+    "item.fireandblood.valyrian_helmet": "Valyrian Helmet",
+    "item.fireandblood.valyrian_chestplate": "Valyrian Chestplate",
+    "item.fireandblood.valyrian_leggings": "Valyrian Leggings",
+    "item.fireandblood.valyrian_boots": "Valyrian Boots",
+
     "block.fireandblood.smelter": "Smelter",
     "block.fireandblood.voclanium_block": "Volcanium Block",
     "block.fireandblood.deepslate_volcanium_ore": "Deepslate Volcanium Ore",

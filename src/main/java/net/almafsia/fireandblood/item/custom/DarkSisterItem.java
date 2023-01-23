@@ -1,17 +1,12 @@
 package net.almafsia.fireandblood.item.custom;
 
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
+import net.almafsia.fireandblood.item.base.ValyrianSwordItem;
 
-public class DarkSisterItem extends SwordItem {
+public class DarkSisterItem extends ValyrianSwordItem {
+    public static final String NAME = "dark_sister";
 
-    public static final Properties DARK_SISTER_PROPERTIES= new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON).fireResistant();
-
-
-    public DarkSisterItem(Tier tier, int attack, float speed, Properties properties) {
-        super(tier, attack, speed, properties);
+    public DarkSisterItem() {
+        super( 5, 1.0f);
         // TODO Auto-generated constructor stub
     }
 

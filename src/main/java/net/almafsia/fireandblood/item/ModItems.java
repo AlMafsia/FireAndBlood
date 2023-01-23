@@ -1,12 +1,12 @@
 package net.almafsia.fireandblood.item;
 
 import net.almafsia.fireandblood.FireAndBlood;
-import net.almafsia.fireandblood.item.custom.DarkSisterItem;
-import net.almafsia.fireandblood.item.custom.VolcaniumIngotItem;
+import net.almafsia.fireandblood.item.base.ArmorTiers;
+import net.almafsia.fireandblood.item.base.ToolTiers;
+import net.almafsia.fireandblood.item.custom.*;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.common.ForgeTier;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -16,10 +16,13 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, FireAndBlood.MOD_ID);
 
-    public static final RegistryObject<Item> VOLCANIUM_INGOT = ITEMS.register("volcanium_ingot", () -> new VolcaniumIngotItem(VolcaniumIngotItem.VOLCANIUM_INGOT_PROPERTIES));
-    public static final RegistryObject<Item> DARK_SISTER = ITEMS.register("dark_sister", () -> new DarkSisterItem(Tiers.VALYRIAN, 5, 1.0f, DarkSisterItem.DARK_SISTER_PROPERTIES));
+    public static final RegistryObject<Item> VOLCANIUM_INGOT = ITEMS.register(VolcaniumIngotItem.NAME, () -> new VolcaniumIngotItem());
+    public static final RegistryObject<Item> DARK_SISTER = ITEMS.register(DarkSisterItem.NAME, () -> new DarkSisterItem());
 
-
+    public static final RegistryObject<ArmorItem> VALYRIAN_HELMET = ITEMS.register(ValyrianHelmetItem.NAME, () -> new ValyrianHelmetItem());
+    public static final RegistryObject<ArmorItem> VALYRIAN_CHESTPLATE = ITEMS.register(ValyrianChestplateItem.NAME, () -> new ValyrianChestplateItem());
+    public static final RegistryObject<ArmorItem> VALYRIAN_LEGGINGS = ITEMS.register(ValyrianLeggingsItem.NAME, () -> new ValyrianLeggingsItem());
+    public static final RegistryObject<ArmorItem> VALYRIAN_BOOTS = ITEMS.register(ValyrianBootsItem.NAME, () -> new ValyrianBootsItem());
 
 
 
@@ -28,8 +31,5 @@ public class ModItems {
     }
 }
 
-class Tiers {
 
-    public static final Tier VALYRIAN = new ForgeTier(4, 2517, 10.0f, 4.0f, 30, null, ()-> Ingredient.EMPTY);
 
-}
