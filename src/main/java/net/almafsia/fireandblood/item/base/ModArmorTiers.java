@@ -1,11 +1,10 @@
 package net.almafsia.fireandblood.item.base;
 
-import net.almafsia.fireandblood.item.base.ModArmorMaterial;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 
-public class ArmorTiers {
+public class ModArmorTiers {
     public static final ArmorMaterial VALYRIAN = new ModArmorMaterial(
             "valyrian",
             2000,

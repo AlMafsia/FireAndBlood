@@ -1,10 +1,7 @@
 package net.almafsia.fireandblood.item;
 
 import net.almafsia.fireandblood.FireAndBlood;
-import net.almafsia.fireandblood.item.base.ArmorTiers;
-import net.almafsia.fireandblood.item.base.ToolTiers;
 import net.almafsia.fireandblood.item.custom.*;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
