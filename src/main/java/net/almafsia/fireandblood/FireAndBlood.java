@@ -2,6 +2,7 @@ package net.almafsia.fireandblood;
 
 import com.mojang.logging.LogUtils;
 import net.almafsia.fireandblood.block.ModBlocks;
+import net.almafsia.fireandblood.block.entity.ModBlockEntities;
 import net.almafsia.fireandblood.item.ModCreativeModeTab;
 import net.almafsia.fireandblood.item.ModItems;
 import net.almafsia.fireandblood.networking.ModMessages;
@@ -28,6 +29,7 @@ public class FireAndBlood {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
