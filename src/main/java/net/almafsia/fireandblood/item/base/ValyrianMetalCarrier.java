@@ -35,11 +35,9 @@ public class ValyrianMetalCarrier extends Hashtable <Item, Item>  {
             Items.AZALEA,
             Items.AMETHYST_SHARD,
             Items.HEART_OF_THE_SEA);
-
-    private int metalsContained=0;
-    private final int maxMetalsContained=4;
-
     public final Item baseMetal;
+    private final int maxMetalsContained=4;
+    private int metalsContained=0;
 
     public ValyrianMetalCarrier(Item baseMetal) throws IllegalArgumentException{
         if (checkIfMetal(baseMetal)) {
@@ -49,12 +47,24 @@ public class ValyrianMetalCarrier extends Hashtable <Item, Item>  {
         else throw new IllegalArgumentException();
     }
 
-    public void addMetal(Item metal){
-        if (checkIfMetal(metal)) if (metalsContained<maxMetalsContained) {
+    public static boolean checkIfAdditionAcceptable(Item addition) {
+        return ACCEPTABLE_ADDITIONS.contains(addition);
+    }
+
+    public static boolean checkIfMetal(Item metal){
+        return METALS.containsKey(metal);
+    }
+
+    public boolean addMetal(Item metal) throws IllegalArgumentException{
+        if (!checkIfMetal(metal)) throw new IllegalArgumentException();
+        if (metalsContained<maxMetalsContained) {
             this.put(metal, null);
             metalsContained++;
+            return true;
         }
+        return false;
     }
+
     public boolean addAddition(Item addition) throws IllegalArgumentException{
         if (!checkIfAdditionAcceptable(addition)) throw new IllegalArgumentException();
         if (this.containsValue(addition)) return false;
@@ -82,11 +92,5 @@ public class ValyrianMetalCarrier extends Hashtable <Item, Item>  {
         return metalCompatibility&&addedCompatibility;
     }
 
-    public static boolean checkIfAdditionAcceptable(Item addition) {
-        return ACCEPTABLE_ADDITIONS.contains(addition);
-    }
-
-    public static boolean checkIfMetal(Item metal){
-        return METALS.containsKey(metal);
-    }
+    public
 }
