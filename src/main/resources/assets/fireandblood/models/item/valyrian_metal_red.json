@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "item/valyrian_metal_neutral",
+    "layer1": "item/valyrian_metal_red"
+  }
+}

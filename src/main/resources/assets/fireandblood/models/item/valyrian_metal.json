@@ -1,0 +1,26 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "item/valyrian_metal_neutral"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "fireandblood:color": 3.0
+      },
+      "model": "item/valyrian_metal_red"
+    },
+    {
+      "predicate": {
+        "fireandblood:color": 2.0
+      },
+      "model": "item/valyrian_metal_green"
+    },
+    {
+      "predicate": {
+        "fireandblood:color": 1.0
+      },
+      "model": "item/valyrian_metal_blue"
+    }
+  ]
+}

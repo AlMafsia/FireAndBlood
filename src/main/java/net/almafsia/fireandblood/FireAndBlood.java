@@ -5,7 +5,13 @@ import net.almafsia.fireandblood.block.ModBlocks;
 import net.almafsia.fireandblood.block.entity.ModBlockEntities;
 import net.almafsia.fireandblood.item.ModCreativeModeTab;
 import net.almafsia.fireandblood.item.ModItems;
+import net.almafsia.fireandblood.item.base.ValyrianMetalItem;
 import net.almafsia.fireandblood.networking.ModMessages;
+import net.almafsia.fireandblood.screen.ModMenuTypes;
+import net.almafsia.fireandblood.screen.SmelterScreen;
+import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -16,6 +22,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import software.bernie.example.registry.ItemRegistry;
 import software.bernie.geckolib.GeckoLib;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -30,6 +37,7 @@ public class FireAndBlood {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -50,7 +58,16 @@ public class FireAndBlood {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            event.enqueueWork(() ->
+            {
+                ItemProperties.register(ModItems.VALYRIAN_METAL.get(),
+                        new ResourceLocation(FireAndBlood.MOD_ID, "color"), (stack, level, living, id) -> {
+                            ValyrianMetalItem val_met = (ValyrianMetalItem) stack.getItem();
+                            return val_met.getColor();
+                        });
+            });
 
+            MenuScreens.register(ModMenuTypes.SMELTER_MENU.get(), SmelterScreen::new);
         }
     }
 

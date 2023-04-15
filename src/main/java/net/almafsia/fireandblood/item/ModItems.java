@@ -1,6 +1,8 @@
 package net.almafsia.fireandblood.item;
 
 import net.almafsia.fireandblood.FireAndBlood;
+import net.almafsia.fireandblood.item.base.ValyrianMetalCarrier;
+import net.almafsia.fireandblood.item.base.ValyrianMetalItem;
 import net.almafsia.fireandblood.item.custom.*;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
@@ -24,6 +26,8 @@ public class ModItems {
     public static final RegistryObject<ArmorItem> VALYRIAN_CHESTPLATE = ITEMS.register(ValyrianChestplateItem.NAME, () -> new ValyrianChestplateItem());
     public static final RegistryObject<ArmorItem> VALYRIAN_LEGGINGS = ITEMS.register(ValyrianLeggingsItem.NAME, () -> new ValyrianLeggingsItem());
     public static final RegistryObject<ArmorItem> VALYRIAN_BOOTS = ITEMS.register(ValyrianBootsItem.NAME, () -> new ValyrianBootsItem());
+
+    public static final RegistryObject<Item> VALYRIAN_METAL = ITEMS.register(ValyrianMetalItem.NAME, () -> new ValyrianMetalItem(new ValyrianMetalCarrier(null)));
 
 
 
